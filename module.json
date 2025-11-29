@@ -1,0 +1,155 @@
+{
+  "id": "wfrp4e-dwarfs-xx",
+  "title": "WFRP4e - Dwarf Bundle",
+  "description": "Explore the rich history of the Dwarfs' mountain strongholds and their time-honoured traditions in this comprehensive guide for those who want to delve deep into the heart of Karaz Ankor!",
+  "version": "7.0.2.1",
+  "authors": [
+    {
+      "name": "Jagusti",
+      "discord": "jagusti"
+    },
+    {
+      "name": "Moo Man",
+      "email": "russellt@cubicle7games.com",
+      "discord": "moo.man"
+    },
+    {
+      "name": "Published by Cubicle 7",
+      "url": "https://cubicle7games.com",
+      "email": "info@cubicle7games.com"
+    }
+  ],
+  "relationships": {
+    "systems": [
+      {
+        "id": "wfrp4e",
+        "type": "system",
+        "manifest": ""
+      }
+    ]
+  },
+  "documentTypes": {
+    "Item": {
+      "rune": {}
+    }
+  },
+  "scripts": [
+    "initialization.js",
+    "config.js",
+    "scripts/dwarf-sheet.js",
+    "scripts/runes.js",
+    "scripts/trappings.js"
+  ],
+  "styles": [
+    "dwarf.css"
+  ],
+  "packs": [
+    {
+      "name": "actors",
+      "label": "Actors (Dwarf Bundle)",
+      "path": "packs/actors",
+      "type": "Actor",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-dwarfs/assets/banners/ch10.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "items",
+      "label": "Items (Dwarf Bundle)",
+      "path": "packs/items",
+      "type": "Item",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-dwarfs/assets/banners/deep-of-smiths.webp",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "journals",
+      "label": "Journals (Dwarf Bundle)",
+      "type": "JournalEntry",
+      "path": "packs/journals",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-dwarfs/assets/banners/dwarf-throneroom.webp",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "tables",
+      "label": "Tables (Dwarf Bundle)",
+      "type": "RollTable",
+      "path": "packs/tables",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-dwarfs/assets/banners/grungni-temple.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "scenes",
+      "label": "Scenes (Dwarf Bundle)",
+      "type": "Scene",
+      "path": "packs/scenes",
+      "system": "wfrp4e",
+      "banner": "./modules/wfrp4e-dwarfs/assets/banners/grey-mountains.webp",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Dwarf Bundle",
+      "sorting": "m",
+      "color": "#26619c",
+      "packs": [
+        "actors",
+        "items",
+        "journals",
+        "tables",
+        "scenes"
+      ]
+    }
+  ],
+  "flags": {
+    "initializationPacks": [
+      "wfrp4e-dwarfs.journals",
+      "wfrp4e-dwarfs.tables"
+    ],
+    "folder": {
+      "name": "Dwarf Bundle",
+      "sorting": "m",
+      "color": "#26619c"
+    }
+  },
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "media": [
+    {
+      "type": "setup",
+      "url": "./modules/wfrp4e-dwarfs/assets/setup.webp"
+    }
+  ],
+  "compatibility": {
+    "minimum": 13,
+    "verified": 13,
+    "maximum": 13
+  },
+  "protected": false,
+  "url": "https://github.com/Kares27/dwarf",
+  "manifest": "https://github.com/Kares27/dwarf/module.json",
+  "download": "https://github.com/Kares27/dwarf/wfrp4e-dwarfs.zip"
+}

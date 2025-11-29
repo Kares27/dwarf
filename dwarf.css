@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "RUNEnglish";
+    src: url(./assets/fonts/runenglish.ttf);
+}
+
+blockquote:has(.runic) h3,
+.journal-entry .runic,
+.application.wfrp4e.actor.dwarf .window-header,
+.application.wfrp4e.actor.dwarf .grudges .sheet-list-header {
+    font-family: "RUNEnglish";
+}
+
+
+.application.wfrp4e.actor.dwarf .grudge-list .list-row {
+    margin-bottom: 0.5rem;
+}
+
+.application.wfrp4e.actor.dwarf .grudge-list .list-row:last-of-type {
+    margin-bottom: 0px;
+}
+
+
+.application.wfrp4e.actor.dwarf .grudge-list input {
+    padding: 0px 0.5rem;
+}
+
+.application.wfrp4e.actor.dwarf:not(.no-theme)   {
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+
+.application.wfrp4e.actor.dwarf:not(.no-theme)     .window-content {
+    border: 1px solid;
+    border-image: url(./assets/ui/dwarf-sheet.webp) 4 repeat;
+    border-image-slice: 80 80 80 80 fill;
+    border-image-width: 20px 20px 20px 20px;
+    border-image-outset: 35px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+
+    backdrop-filter: none;
+    padding: 40px;
+}
+
+.application.wfrp4e.actor.dwarf:not(.no-theme) {
+    /* filter: drop-shadow(0 0 4px black); disabled because it makes the entire sheet disappear on anything other than chrome */
+    --header-font: "RUNEnglish";
+
+
+}
+
+
+.application.wfrp4e.actor.dwarf:not(.no-theme) .window-header {
+    border: 0px;
+    padding-right: 1rem;
+}
+
+
+.application.wfrp4e.actor.dwarf:not(.no-theme) .window-header .header-control {
+    --button-size: 1.5rem;
+    background-position: 0px 0px;
+    background-image: url(./assets/ui/button.webp);
+    filter: drop-shadow(0 0 2px black);
+
+}

@@ -1,0 +1,58 @@
+{
+    "WFRP4E.Rune": "Rune",
+    "WFRP4E.Runes": "Runes",
+    "TYPES.Item.wfrp4e-dwarfs.rune": "Rune",
+    "WFRP4E.Category": "Category",
+    "WFRP4E.MasterRune": "Master Rune",
+    "WFRP4E.RequiredSL": "Required SL",
+    
+    "WFRP4E.ArmourType.Gromril" : "Gromril",
+
+    "WFRP4E.RuneCategory" : {
+        "Weapon" : "Weapon",
+        "Armour" : "Armour",
+        "Talisman" : "Talisman",
+        "Protection" : "Protection",
+        "Engineering" : "Engineering",
+        "Doom" : "Doom"
+    },
+
+    "SHEET.Perpetrator" : "Perpetrator",
+    "SHEET.Offence" : "Offence",
+    "SHEET.Date" : "Date",
+    "SHEET.Restitution" : "Restitution",
+    "SHEET.Blood" : "Blood Grudge",
+    "SHEET.Resolved" : "Resolved",
+
+    "SHEET.GrudgeList" : "Book of Grudges",
+
+    "CHARGEN.Message.ReplacedTrappings" : "<p>Replaced <strong>{item}</strong> with <strong>{replacement}</strong>",
+    
+    "WH": {
+        "Models": {
+            "rune": {
+                "FIELDS": {
+                    "category": {
+                        "label": "Category"
+                    },
+                    "master" : {
+                        "label": "Master Rune"
+                    },
+                    "SL" : {
+                        "required" : {
+                            "label" : "SL Required"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    
+    "PROPERTY.Spread" : "Spread",
+    "PROPERTY.Crewed" : "Crewed",
+    "PROPERTY.Salvo" : "Salvo",
+
+    "WFRP4E.Properties.Spread" : "<p>Weapons with the Spread quality fire an expanding cloud of projectiles which may strike several targets. Depending on the range to the target, weapons with this quality behave somewhat differently.</p>    <div style='margin-left: 30px'><p><strong>Point Blank</strong>: The shot targets a single individual. Add (Rating) to the weapon’s Damage.</p>        <p><strong>Short Range to Long Range</strong>: The shot targets a single individual, and the next (Rating) closest visible creatures. No two targets may be more than (Rating) yards apart.</p>        <p><strong>Extreme Range</strong>: As for Short to Long Range, but reduce the weapon’s damage by (Rating) as well.</p>    </div>",  
+    "WFRP4E.Properties.Salvo" : "@UUID[Compendium.wfrp4e-dwarfs.journals.TIBTC2eAzMRwtQH0.JournalEntryPage.MDNEtNn6jjMBmQLl#salvo-(rating)]{Salvo}",
+    "WFRP4E.Properties.Crewed" : "@UUID[Compendium.wfrp4e-dwarfs.journals.TIBTC2eAzMRwtQH0.JournalEntryPage.MDNEtNn6jjMBmQLl#crewed-(rating)]{Crewed}"
+}

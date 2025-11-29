@@ -1,0 +1,149 @@
+<section class="tab {{tab.cssClass}}" data-group="primary" data-tab="{{tab.id}}">
+    {{#if (isGM)}}
+        <div class="editor-section">
+            <div class="header">{{localize "GM Notes"}}</div>
+            {{formInput fields.details.fields.gmnotes.fields.value value=source.system.details.gmnotes.value enriched=enriched.system.details.gmnotes.value toggled=true}}
+        </div>
+    {{/if}}
+
+    <div class="editor-section">
+        <div class="header">{{localize "Biography"}}</div>
+        {{formInput fields.details.fields.biography.fields.value value=source.system.details.biography.value enriched=enriched.system.details.biography.value toggled=true}}
+    </div>
+
+
+    <div class="form-group">
+        <label>{{localize "Motivation"}}</label>
+        <div class="form-fields">
+            <input name="system.details.motivation.value" type="text" value="{{system.details.motivation.value}}" />
+        </div>
+    </div>
+
+
+    <div class="grudges">
+
+        <div class="sheet-list-header centered">{{localize "SHEET.GrudgeList"}}</div>
+        <div class="sheet-list grudge-list condensed">
+            <div class="list-header row-content">
+                <div>{{localize "SHEET.Date"}}</div>
+                <div class="flex">{{localize "SHEET.Perpetrator"}}</div>
+                <div class="flex large">{{localize "SHEET.Offence"}}</div>
+                <div class="">{{localize "SHEET.Blood"}}</div>
+                <div class="list-controls">
+                    <a class="list-control" data-action="listCreate" data-force="true" data-path="flags.wfrp4e-dwarfs.grudges"><i class="fas fa-plus"></i></a>
+                </div>
+            </div>
+            <div class="list-content">
+                {{#each grudges.active}}
+                    <div class="list-row {{#if this.blood}}blood{{/if}}" data-index="{{this.index}}" data-path="flags.wfrp4e-dwarfs.grudges">
+                        <div class="row-content">
+                            <input type="text" class="centered" data-action="editList" data-ipath="date" value="{{this.date}}">
+                            <input type="text" class="centered flex" data-action="editList" data-ipath="perpetrator" value="{{this.perpetrator}}">
+                            <input type="text" data-action="editList" data-ipath="offence" class="flex large" value="{{this.offence}}">
+                            <input type="checkbox" data-action="editList" data-ipath="blood" {{checked this.blood}}>
+                            {{#unless isGM}}
+                                <div class="list-controls">
+                                    <a class="list-control" data-action="listDelete"><i class="fas fa-xmark"></i></a>
+                                </div>
+                            {{/unless}}
+                        </div>
+                        <div class="row-content">
+                            <button type="button" class="sheet-button" data-action="resolveGrudge">Restitution</button> <input type="text" data-action="editList" data-ipath="restitution" class="flex" value="{{this.restitution}}">
+                        </div>
+                    </div>
+                {{/each}}
+
+                {{#if grudges.inactive.length}}
+                    <div class="sheet-list-header centered">{{localize "SHEET.Resolved"}}</div>
+                    <div class="list-header row-content">
+                        <div>{{localize "SHEET.Date"}}</div>
+                        <div class="flex">{{localize "SHEET.Perpetrator"}}</div>
+                        <div class="flex large">{{localize "SHEET.Offence"}}</div>
+                        <div class="">{{localize "SHEET.Blood"}}</div>
+                        <div class="list-controls">
+                        </div>
+                    </div>
+
+                    {{#each grudges.inactive}}
+                        <div class="list-row inactive {{#unless (isGM)}}disabled{{/unless}}" data-index="{{this.index}}" data-path="flags.wfrp4e-dwarfs.grudges">
+                            <div class="row-content">
+                                <input type="text" class="centered" data-action="editList" data-ipath="date" value="{{this.date}}">
+                                <input type="text" class="centered flex" data-action="editList" data-ipath="perpetrator" value="{{this.perpetrator}}">
+                                <input type="text" data-action="editList" data-ipath="offence" class="flex large" value="{{this.offence}}">
+                                <input type="checkbox" data-action="editList" data-ipath="blood" {{checked this.blood}}>
+                                {{#if (isGM)}}
+                                    <div class="list-controls">
+                                        <a class="list-control" data-action="listDelete"><i class="fas fa-xmark"></i></a>
+                                    </div>
+                                {{/if}}
+                            </div>
+                            <div class="row-content">
+                                <input type="text" data-action="editList" data-ipath="restitution" class="flex" value="{{this.restitution}}">
+                            </div>
+                        </div>
+                    {{/each}}
+                {{/if}}
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="experience-log">
+
+        <div class="sheet-list-header centered">{{localize "SHEET.ExperienceLog"}}</div>
+        {{#if experienceLog.length}}
+            <div class="sheet-list exp condensed">
+                <div class="list-header row-content">
+                    <div class="flex">{{localize "SHEET.ExpChange"}}</div>
+                    <div class="flex">{{localize "Reason"}}</div>
+                    <div class="flex">{{localize "SHEET.TotalSpentExp"}}</div>
+                    <div class="tiny"></div>
+                </div>
+                <div class="list-content">
+                    {{#each experienceLog}}
+                        <div class="list-row" data-index="{{this.index}}">
+                            <div class="row-content">
+                                <div class="flex">
+                                    <span {{#if (eq this.type "total" )}} style="visibility: hidden;" {{/if}}>{{this.amount}}</span>
+                                    <span class="exp-divisor"> / </span>
+                                    <span {{#if (eq this.type "spent" )}} style="visibility: hidden;" {{/if}}>{{this.amount}}</span>
+                                </div>
+                                <div class="flex">{{this.reason}}</div>
+                                <div class="flex">{{this.spent}} / {{this.total}}</div>
+                                {{#if (isGM)}}
+                                    <a class="tiny" data-action="deleteExp"><i class="fas fa-trash"></i></a>
+                                {{/if}}
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        {{/if }}
+    </div>
+
+    {{#if items.template.length}}
+        <div class="sheet-list condensed">
+            <div class="list-header row-content">
+                <div class="list-name">{{localize "SHEET.AppliedTemplates"}}</div>
+            </div>
+            <div class="list-content">
+                {{#each items.template}}
+                    <div class="list-row" data-uuid="{{this.uuid}}">
+                        <div class="row-content">
+                            <div class="list-name">
+                                <a class="label" data-action="editEmbedded">{{this.name}}</a>
+                            </div>
+                            <div class="list-controls">
+                                <a class="list-control" data-action="deleteEmbedded"><i class="fa-regular fa-xmark"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    {{/if}}
+
+</section>
